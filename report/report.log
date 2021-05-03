@@ -1,0 +1,57 @@
+2021-05-03 13:14:40.964  INFO 3159 --- [main] c.a.integration.BuildReportIT            : Starting BuildReportIT using Java 15.0.1 on 192.168.1.104 with PID 3159 (started by ashmodi in /Users/ashmodi/Documents/workspace/restful-booker-platform/report)
+2021-05-03 13:14:40.965  INFO 3159 --- [main] c.a.integration.BuildReportIT            : The following profiles are active: dev
+2021-05-03 13:14:42.379  INFO 3159 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3005 (http)
+2021-05-03 13:14:42.388  INFO 3159 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-03 13:14:42.388  INFO 3159 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-03 13:14:42.465  INFO 3159 --- [main] o.a.c.c.C.[.[localhost].[/report]        : Initializing Spring embedded WebApplicationContext
+2021-05-03 13:14:42.466  INFO 3159 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1304 ms
+2021-05-03 13:14:43.184  INFO 3159 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-05-03 13:14:43.418  INFO 3159 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 13:14:43.833  INFO 3159 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3005 (http) with context path '/report'
+2021-05-03 13:14:44.019  INFO 3159 --- [main] c.a.integration.BuildReportIT            : Started BuildReportIT in 3.279 seconds (JVM running for 4.104)
+2021-05-03 13:14:45.092  INFO 3159 --- [http-nio-3005-exec-2] o.a.c.c.C.[.[localhost].[/report]        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-03 13:14:45.093  INFO 3159 --- [http-nio-3005-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-05-03 13:14:45.094  INFO 3159 --- [http-nio-3005-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-05-03 13:14:45.210  INFO 3159 --- [Grizzly-worker(1)] com.xebialabs.restito.server.StubServer  : GET Request to URL: http://localhost:3001/room of type null
+2021-05-03 13:14:45.212  INFO 3159 --- [Grizzly-worker(1)] com.xebialabs.restito.server.StubServer  :  --> Header [host] with value: [localhost:3001]
+2021-05-03 13:14:45.212  INFO 3159 --- [Grizzly-worker(1)] com.xebialabs.restito.server.StubServer  :  --> Header [connection] with value: [keep-alive]
+2021-05-03 13:14:45.212  INFO 3159 --- [Grizzly-worker(1)] com.xebialabs.restito.server.StubServer  :  --> Header [accept] with value: [application/json, application/*+json]
+2021-05-03 13:14:45.212  INFO 3159 --- [Grizzly-worker(1)] com.xebialabs.restito.server.StubServer  :  --> Header [user-agent] with value: [Java/15.0.1]
+2021-05-03 13:14:45.213  INFO 3159 --- [Grizzly-worker(1)] com.xebialabs.restito.server.StubServer  :  --> Body: 
+2021-05-03 13:14:45.213  INFO 3159 --- [Grizzly-worker(1)] com.xebialabs.restito.server.StubServer  : 
+2021-05-03 13:14:45.248  INFO 3159 --- [Grizzly-worker(1)] com.xebialabs.restito.server.StubServer  : GET Request to URL: http://localhost:3000/booking/ of type null
+2021-05-03 13:14:45.249  INFO 3159 --- [Grizzly-worker(1)] com.xebialabs.restito.server.StubServer  :  --> Header [host] with value: [localhost:3000]
+2021-05-03 13:14:45.249  INFO 3159 --- [Grizzly-worker(1)] com.xebialabs.restito.server.StubServer  :  --> Header [connection] with value: [keep-alive]
+2021-05-03 13:14:45.249  INFO 3159 --- [Grizzly-worker(1)] com.xebialabs.restito.server.StubServer  :  --> Header [accept] with value: [application/json, application/*+json]
+2021-05-03 13:14:45.249  INFO 3159 --- [Grizzly-worker(1)] com.xebialabs.restito.server.StubServer  :  --> Header [user-agent] with value: [Java/15.0.1]
+2021-05-03 13:14:45.249  INFO 3159 --- [Grizzly-worker(1)] com.xebialabs.restito.server.StubServer  :  --> Parameter [roomid] with value(s): 
+2021-05-03 13:14:45.249  INFO 3159 --- [Grizzly-worker(1)] com.xebialabs.restito.server.StubServer  :       -> [1]
+2021-05-03 13:14:45.249  INFO 3159 --- [Grizzly-worker(1)] com.xebialabs.restito.server.StubServer  :  --> Body: 
+2021-05-03 13:14:45.249  INFO 3159 --- [Grizzly-worker(1)] com.xebialabs.restito.server.StubServer  : 
+2021-05-03 13:14:45.261  INFO 3159 --- [Grizzly-worker(2)] com.xebialabs.restito.server.StubServer  : GET Request to URL: http://localhost:3000/booking/ of type null
+2021-05-03 13:14:45.262  INFO 3159 --- [Grizzly-worker(2)] com.xebialabs.restito.server.StubServer  :  --> Header [host] with value: [localhost:3000]
+2021-05-03 13:14:45.262  INFO 3159 --- [Grizzly-worker(2)] com.xebialabs.restito.server.StubServer  :  --> Header [connection] with value: [keep-alive]
+2021-05-03 13:14:45.262  INFO 3159 --- [Grizzly-worker(2)] com.xebialabs.restito.server.StubServer  :  --> Header [accept] with value: [application/json, application/*+json]
+2021-05-03 13:14:45.262  INFO 3159 --- [Grizzly-worker(2)] com.xebialabs.restito.server.StubServer  :  --> Header [user-agent] with value: [Java/15.0.1]
+2021-05-03 13:14:45.262  INFO 3159 --- [Grizzly-worker(2)] com.xebialabs.restito.server.StubServer  :  --> Parameter [roomid] with value(s): 
+2021-05-03 13:14:45.262  INFO 3159 --- [Grizzly-worker(2)] com.xebialabs.restito.server.StubServer  :       -> [2]
+2021-05-03 13:14:45.262  INFO 3159 --- [Grizzly-worker(2)] com.xebialabs.restito.server.StubServer  :  --> Body: 
+2021-05-03 13:14:45.263  INFO 3159 --- [Grizzly-worker(2)] com.xebialabs.restito.server.StubServer  : 
+2021-05-03 13:14:45.414  INFO 3159 --- [main] o.g.grizzly.http.server.NetworkListener  : Stopped listener bound to [0.0.0.0:3001]
+2021-05-03 13:14:45.416  INFO 3159 --- [main] o.g.grizzly.http.server.NetworkListener  : Stopped listener bound to [0.0.0.0:3000]
+2021-05-03 13:14:46.932  INFO 3159 --- [main] o.g.grizzly.http.server.NetworkListener  : Started listener bound to [0.0.0.0:3001]
+2021-05-03 13:14:46.932  INFO 3159 --- [main] o.g.grizzly.http.server.HttpServer       : [HttpServer-2] Started.
+2021-05-03 13:14:46.936  INFO 3159 --- [main] o.g.grizzly.http.server.NetworkListener  : Started listener bound to [0.0.0.0:3000]
+2021-05-03 13:14:46.936  INFO 3159 --- [main] o.g.grizzly.http.server.HttpServer       : [HttpServer-3] Started.
+2021-05-03 13:14:46.958  INFO 3159 --- [Grizzly-worker(1)] com.xebialabs.restito.server.StubServer  : GET Request to URL: http://localhost:3000/booking/ of type null
+2021-05-03 13:14:46.958  INFO 3159 --- [Grizzly-worker(1)] com.xebialabs.restito.server.StubServer  :  --> Header [host] with value: [localhost:3000]
+2021-05-03 13:14:46.958  INFO 3159 --- [Grizzly-worker(1)] com.xebialabs.restito.server.StubServer  :  --> Header [connection] with value: [keep-alive]
+2021-05-03 13:14:46.959  INFO 3159 --- [Grizzly-worker(1)] com.xebialabs.restito.server.StubServer  :  --> Header [accept] with value: [application/json, application/*+json]
+2021-05-03 13:14:46.959  INFO 3159 --- [Grizzly-worker(1)] com.xebialabs.restito.server.StubServer  :  --> Header [user-agent] with value: [Java/15.0.1]
+2021-05-03 13:14:46.959  INFO 3159 --- [Grizzly-worker(1)] com.xebialabs.restito.server.StubServer  :  --> Parameter [roomid] with value(s): 
+2021-05-03 13:14:46.959  INFO 3159 --- [Grizzly-worker(1)] com.xebialabs.restito.server.StubServer  :       -> [1]
+2021-05-03 13:14:46.959  INFO 3159 --- [Grizzly-worker(1)] com.xebialabs.restito.server.StubServer  :  --> Body: 
+2021-05-03 13:14:46.959  INFO 3159 --- [Grizzly-worker(1)] com.xebialabs.restito.server.StubServer  : 
+2021-05-03 13:14:46.990  INFO 3159 --- [main] o.g.grizzly.http.server.NetworkListener  : Stopped listener bound to [0.0.0.0:3001]
+2021-05-03 13:14:46.992  INFO 3159 --- [main] o.g.grizzly.http.server.NetworkListener  : Stopped listener bound to [0.0.0.0:3000]
+2021-05-03 13:14:48.519  INFO 3159 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
