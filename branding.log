@@ -1,0 +1,39 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.4.5)
+
+2021-05-03 13:15:30.263  INFO 3386 --- [           main] c.a.api.BrandingApplication              : Starting BrandingApplication using Java 15.0.1 on 192.168.1.104 with PID 3386 (/Users/ashmodi/Documents/workspace/restful-booker-platform/branding/target/restful-booker-platform-branding-1.3.SNAPSHOT-exec.jar started by ashmodi in /Users/ashmodi/Documents/workspace/restful-booker-platform)
+2021-05-03 13:15:30.268  INFO 3386 --- [           main] c.a.api.BrandingApplication              : The following profiles are active: dev
+2021-05-03 13:15:35.355  INFO 3386 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-03 13:15:35.394  INFO 3386 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 JPA repository interfaces.
+2021-05-03 13:15:37.756  INFO 3386 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3002 (http)
+2021-05-03 13:15:37.787  INFO 3386 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-03 13:15:37.787  INFO 3386 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-03 13:15:38.036  INFO 3386 --- [           main] o.a.c.c.C.[.[localhost].[/branding]      : Initializing Spring embedded WebApplicationContext
+2021-05-03 13:15:38.036  INFO 3386 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 7493 ms
+2021-05-03 13:15:38.691  INFO 3386 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-05-03 13:15:39.707  INFO 3386 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-05-03 13:15:39.732  INFO 3386 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:mem:rbp'
+2021-05-03 13:15:40.429  INFO 3386 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-03 13:15:40.626  INFO 3386 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.30.Final
+2021-05-03 13:15:41.067  INFO 3386 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-05-03 13:15:41.384  INFO 3386 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-05-03 13:15:42.205  INFO 3386 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-03 13:15:42.220  INFO 3386 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-03 13:15:42.301  INFO 3386 --- [           main] com.automationintesting.db.BrandingDB    : DB server mode disabled
+2021-05-03 13:15:42.966  WARN 3386 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-03 13:15:43.440  INFO 3386 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-05-03 13:15:44.099  INFO 3386 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 13:15:44.837  INFO 3386 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3002 (http) with context path '/branding'
+2021-05-03 13:15:45.512  INFO 3386 --- [           main] c.a.api.BrandingApplication              : Started BrandingApplication in 17.547 seconds (JVM running for 19.064)
+2021-05-03 13:15:45.593  INFO 3386 --- [           main] c.a.service.DatabaseScheduler            : No env var was set for DB refresh (or set as 0) so not running DB reset
+2021-05-03 13:15:46.562  INFO 3386 --- [nio-3002-exec-1] o.a.c.c.C.[.[localhost].[/branding]      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-03 13:15:46.562  INFO 3386 --- [nio-3002-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-05-03 13:15:46.565  INFO 3386 --- [nio-3002-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+02-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-05-03 13:15:46.565  INFO 3386 --- [http-nio-3002-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms

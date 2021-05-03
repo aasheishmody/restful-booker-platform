@@ -1,0 +1,49 @@
+2021-05-03 13:14:51.918  INFO 3201 --- [main] c.a.integration.BrandingServiceIT        : Starting BrandingServiceIT using Java 15.0.1 on 192.168.1.104 with PID 3201 (started by ashmodi in /Users/ashmodi/Documents/workspace/restful-booker-platform/branding)
+2021-05-03 13:14:51.920  INFO 3201 --- [main] c.a.integration.BrandingServiceIT        : The following profiles are active: dev
+2021-05-03 13:14:53.000  INFO 3201 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-03 13:14:53.011  INFO 3201 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2021-05-03 13:14:53.659  INFO 3201 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3002 (http)
+2021-05-03 13:14:53.670  INFO 3201 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-03 13:14:53.670  INFO 3201 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-03 13:14:53.774  INFO 3201 --- [main] o.a.c.c.C.[.[localhost].[/branding]      : Initializing Spring embedded WebApplicationContext
+2021-05-03 13:14:53.775  INFO 3201 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1659 ms
+2021-05-03 13:14:53.988  INFO 3201 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-05-03 13:14:54.135  INFO 3201 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-05-03 13:14:54.140  INFO 3201 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:mem:rbp'
+2021-05-03 13:14:54.365  INFO 3201 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-03 13:14:54.412  INFO 3201 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.30.Final
+2021-05-03 13:14:54.515  INFO 3201 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-05-03 13:14:54.610  INFO 3201 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-05-03 13:14:54.797  INFO 3201 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-03 13:14:54.806  INFO 3201 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-03 13:14:54.845  INFO 3201 --- [main] com.automationintesting.db.BrandingDB    : DB server mode disabled
+2021-05-03 13:14:55.116  WARN 3201 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-03 13:14:55.352  INFO 3201 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-05-03 13:14:55.694  INFO 3201 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 13:14:56.220  INFO 3201 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3002 (http) with context path '/branding'
+2021-05-03 13:14:56.463  INFO 3201 --- [main] c.a.integration.BrandingServiceIT        : Started BrandingServiceIT in 4.771 seconds (JVM running for 5.63)
+2021-05-03 13:14:56.503  INFO 3201 --- [main] c.a.service.DatabaseScheduler            : No env var was set for DB refresh (or set as 0) so not running DB reset
+2021-05-03 13:14:57.418  INFO 3201 --- [http-nio-3002-exec-1] o.a.c.c.C.[.[localhost].[/branding]      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-03 13:14:57.418  INFO 3201 --- [http-nio-3002-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-05-03 13:14:57.420  INFO 3201 --- [http-nio-3002-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-05-03 13:14:57.651  INFO 3201 --- [main] o.g.grizzly.http.server.NetworkListener  : Stopped listener bound to [0.0.0.0:3004]
+2021-05-03 13:14:59.164  INFO 3201 --- [main] o.g.grizzly.http.server.NetworkListener  : Started listener bound to [0.0.0.0:3004]
+2021-05-03 13:14:59.164  INFO 3201 --- [main] o.g.grizzly.http.server.HttpServer       : [HttpServer-1] Started.
+2021-05-03 13:14:59.361  INFO 3201 --- [main] o.g.grizzly.http.server.NetworkListener  : Stopped listener bound to [0.0.0.0:3004]
+2021-05-03 13:15:00.879  INFO 3201 --- [main] o.g.grizzly.http.server.NetworkListener  : Started listener bound to [0.0.0.0:3004]
+2021-05-03 13:15:00.880  INFO 3201 --- [main] o.g.grizzly.http.server.HttpServer       : [HttpServer-2] Started.
+2021-05-03 13:15:00.988  INFO 3201 --- [Grizzly-worker(1)] com.xebialabs.restito.server.StubServer  : POST Request to URL: http://localhost:3004/auth/validate of type application/json
+2021-05-03 13:15:00.989  INFO 3201 --- [Grizzly-worker(1)] com.xebialabs.restito.server.StubServer  :  --> Header [content-length] with value: [18]
+2021-05-03 13:15:00.989  INFO 3201 --- [Grizzly-worker(1)] com.xebialabs.restito.server.StubServer  :  --> Header [host] with value: [localhost:3004]
+2021-05-03 13:15:00.989  INFO 3201 --- [Grizzly-worker(1)] com.xebialabs.restito.server.StubServer  :  --> Header [content-type] with value: [application/json]
+2021-05-03 13:15:00.989  INFO 3201 --- [Grizzly-worker(1)] com.xebialabs.restito.server.StubServer  :  --> Header [connection] with value: [keep-alive]
+2021-05-03 13:15:00.989  INFO 3201 --- [Grizzly-worker(1)] com.xebialabs.restito.server.StubServer  :  --> Header [accept] with value: [application/json]
+2021-05-03 13:15:00.989  INFO 3201 --- [Grizzly-worker(1)] com.xebialabs.restito.server.StubServer  :  --> Header [user-agent] with value: [Java/15.0.1]
+2021-05-03 13:15:00.989  INFO 3201 --- [Grizzly-worker(1)] com.xebialabs.restito.server.StubServer  :  --> Body: 
+2021-05-03 13:15:00.989  INFO 3201 --- [Grizzly-worker(1)] com.xebialabs.restito.server.StubServer  : {"token":"abc123"}
+2021-05-03 13:15:01.024  INFO 3201 --- [main] o.g.grizzly.http.server.NetworkListener  : Stopped listener bound to [0.0.0.0:3004]
+2021-05-03 13:15:02.557  INFO 3201 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-03 13:15:02.560  INFO 3201 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-05-03 13:15:02.561  INFO 3201 --- [SpringContextShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2021-05-03 13:15:02.563  INFO 3201 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-05-03 13:15:02.564  INFO 3201 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
