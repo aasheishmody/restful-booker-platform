@@ -1,12 +1,13 @@
 package pages;
 
 import base.DriverFactory;
+import base.Page;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class AdminPanelPage {
+public class AdminPanelPage extends Page {
 
     @FindBy(id = "username")
     private WebElement userNameTextbox;
@@ -14,12 +15,6 @@ public class AdminPanelPage {
     private WebElement passwordTextbox;
     @FindBy(id = "doLogin")
     private WebElement loginButton;
-
-
-    public AdminPanelPage()
-    {
-        PageFactory.initElements(DriverFactory.getDriver(), this);
-    }
 
     public void navigateToAdminPage() {
         DriverFactory.getDriver().get("http://localhost:8080/#/admin");

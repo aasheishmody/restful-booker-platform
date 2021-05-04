@@ -1,13 +1,14 @@
 package pages;
 
 import base.DriverFactory;
-import org.openqa.selenium.WebDriver;
+import base.Page;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-public class BBBookingManagementPage {
+public class BBBookingManagementPage extends Page {
     @FindBy(id = "roomNumber")
     private WebElement roomNumberTextbox;
     @FindBy(id = "type")
@@ -30,18 +31,19 @@ public class BBBookingManagementPage {
     private WebElement viewsCheckbox;
     @FindBy(id = "createRoom")
     private WebElement createButton;
-
-
-    public BBBookingManagementPage()
-    {
-        PageFactory.initElements(DriverFactory.getDriver(), this);
-    }
     
     public boolean iAmOnTheBBBookingManagementPage() {
              return createButton.isDisplayed();
     }
 
-    public void enterRoomBookingDetails(String roomNumber, String roomType, String accessible, String roomPrice, String wiFi, String tv, String radio, String refreshments, String safe, String views){
+    public void enterRoomBookingDetails(String roomNumber, String roomType, String accessible, String roomPrice, String wiFi, String tv, String radio, String refreshments, String safe, String views) throws Exception {
+        String id = "roomNumber" +roomNumber;
+        try {
+            if (DriverFactory.getDriver().findElement(By.id(id)).isDisplayed())
+                throw new Exception("Room number is not available");
+        }catch (NoSuchElementException e){
+            System.out.println("Room number " +roomNumber+  " is available");
+        }
         enterRoomNumber(roomNumber);
         selectRoomType(roomType);
         selectAccessible(accessible);
@@ -104,5 +106,63 @@ public class BBBookingManagementPage {
 
     public void clickCreateButton() {
         createButton.click();
+    }
+
+    public boolean newRoomBookingIsDisplayed(String roomNumber, String roomType, String accessible, String price, String wifi, String tv, String radio, String refreshments, String safe, String views) {
+        String id = "roomNumber" +roomNumber;
+        WebElement roomNumberLocator = DriverFactory.getDriver().findElement(By.id(id));
+        String roomNumberLocatorXpath = "//*[@id='" +id+ "']/following::div/p";
+        WebElement roomTypeLocator = DriverFactory.getDriver().findElement(By.xpath(roomNumberLocatorXpath));
+        String accessibleLocatorXpath = roomNumberLocatorXpath + "/following::div/p";
+        WebElement accessibleLocator = DriverFactory.getDriver().findElement(By.xpath(accessibleLocatorXpath));
+        String priceLocatorXpath = accessibleLocatorXpath + "/following::div/p";
+        WebElement priceLocator = DriverFactory.getDriver().findElement(By.xpath(priceLocatorXpath));
+        String detailsLocatorXpath = priceLocatorXpath + "/following::div/p";
+        WebElement detailsLocator = DriverFactory.getDriver().findElement(By.xpath(detailsLocatorXpath));
+
+        boolean wifiDetails = false;
+        if(wifi.equalsIgnoreCase("√"))
+        wifiDetails = detailsLocator.getText().contains("WiFi");
+        else
+            wifiDetails = !(detailsLocator.getText().contains("WiFi"));
+
+        boolean tvDetails = false;
+        if(tv.equalsIgnoreCase("√"))
+            tvDetails = detailsLocator.getText().contains("TV");
+        else
+            tvDetails = !(detailsLocator.getText().contains("TV"));
+
+        boolean radioDetails = false;
+        if(radio.equalsIgnoreCase("√"))
+            radioDetails = detailsLocator.getText().contains("Radio");
+        else
+            radioDetails = !(detailsLocator.getText().contains("Radio"));
+
+        boolean refreshmentsDetails = false;
+        if(refreshments.equalsIgnoreCase("√"))
+            refreshmentsDetails = detailsLocator.getText().contains("Refreshments");
+        else
+            refreshmentsDetails = !(detailsLocator.getText().contains("Refreshments"));
+
+        boolean safeDetails = false;
+        if(safe.equalsIgnoreCase("√"))
+            safeDetails = detailsLocator.getText().contains("Safe");
+        else
+            safeDetails = !(detailsLocator.getText().contains("Safe"));
+
+        boolean viewsDetails = false;
+        if(views.equalsIgnoreCase("√"))
+            viewsDetails = detailsLocator.getText().contains("Views");
+        else
+        viewsDetails = !(detailsLocator.getText().contains("Views"));
+
+
+
+        return roomNumberLocator.getText().equalsIgnoreCase(roomNumber) &&
+                roomTypeLocator.getText().equalsIgnoreCase(roomType) &&
+                accessibleLocator.getText().equalsIgnoreCase(accessible) &&
+                priceLocator.getText().equalsIgnoreCase(price) &&
+                wifiDetails && tvDetails && radioDetails && refreshmentsDetails && safeDetails && viewsDetails;
+
     }
 }

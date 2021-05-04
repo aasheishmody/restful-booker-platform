@@ -14,6 +14,6 @@ public class Hooks{
 
     @After
     public void afterTest() {
-        DriverFactory.getDriver().quit();
+        DriverFactory.getDriver().manage().deleteAllCookies();
     }
 }
