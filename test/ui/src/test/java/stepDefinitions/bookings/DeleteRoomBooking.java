@@ -1,5 +1,7 @@
 package stepDefinitions.bookings;
 
+import base.DriverFactory;
+import base.SharedDriver;
 import base.TestContext;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
@@ -15,7 +17,7 @@ public class DeleteRoomBooking {
     private final TestContext testContext;
     private final BBBookingManagementPage bbBookingManagementPage;
 
-    public DeleteRoomBooking(TestContext testContext, BBBookingManagementPage bbBookingManagementPage) {
+    public DeleteRoomBooking(TestContext testContext, DriverFactory driver, BBBookingManagementPage bbBookingManagementPage) {
         this.testContext=testContext;
         this.bbBookingManagementPage = bbBookingManagementPage;
     }

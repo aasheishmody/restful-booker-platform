@@ -1,5 +1,7 @@
 package stepDefinitions.bookings;
 
+import base.DriverFactory;
+import base.SharedDriver;
 import base.TestContext;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
@@ -20,7 +22,7 @@ public class AddRoomBooking {
     private final AdminPanelPage adminPanelPage;
     private final BBBookingManagementPage bbBookingManagementPage;
 
-    public AddRoomBooking(TestContext testContext, AdminPanelPage adminPanelPage, BBBookingManagementPage bbBookingManagementPage) {
+    public AddRoomBooking(TestContext testContext, DriverFactory driver, AdminPanelPage adminPanelPage, BBBookingManagementPage bbBookingManagementPage) {
         this.testContext=testContext;
         this.adminPanelPage = adminPanelPage;
         this.bbBookingManagementPage = bbBookingManagementPage;

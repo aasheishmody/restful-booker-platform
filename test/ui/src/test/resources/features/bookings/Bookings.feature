@@ -1,4 +1,4 @@
-@addBooking
+@roomBooking
 Feature: Bookings
 
   As an admin
@@ -20,8 +20,8 @@ Feature: Bookings
 
     Examples:
       | Room # | Type   | Accessible | Price | WiFi    | TV | Radio | Refreshments | Safe | Views |
-      | 139   | Single | true       | 110   | √       | √  | √     | √            | √    | √     |
-      | 140   | Suite  | false      | 115   | [blank] | √  | √     | √            | √    | √     |
+      | 120    | Single | true       | 110   | √       | √  | √     | √            | √    | √     |
+      | 125    | Suite  | false      | 115   | [blank] | √  | √     | √            | √    | √     |
 
   Scenario Outline: Delete room booking
     When I click the 'x' button for a room booking on the 'B&B Booking management' page
@@ -32,5 +32,5 @@ Feature: Bookings
 
     Examples:
       | Room # |
-      | 124    |
-      | 136    |
+      | 110    |
+      | 115    |
