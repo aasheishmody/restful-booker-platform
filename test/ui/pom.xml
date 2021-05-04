@@ -9,7 +9,7 @@
     <version>0.0.1</version><packaging>jar</packaging>
 
     <properties>
-        <browser>chrome</browser>
+        <browser>Chrome</browser>
         <baseUrl>http://localhost:8080</baseUrl>
         <cucumberVersion>5.7.0</cucumberVersion>
         <headlessFlag>true</headlessFlag>
@@ -93,6 +93,10 @@
                                 <param>sample.properties</param>
                                 <param>other.properties</param>
                             </classificationFiles>
+                            <classifications>
+                                <Browser>${browser}</Browser>
+                                <Platform>${os.name} ${os.version}</Platform>
+                            </classifications>
                             <!-- optional, set true to fail build on test failures -->
                             <checkBuildResult>true</checkBuildResult>
                         </configuration>

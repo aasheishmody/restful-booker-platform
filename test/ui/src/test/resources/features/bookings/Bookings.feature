@@ -20,8 +20,8 @@ Feature: Bookings
 
     Examples:
       | Room # | Type   | Accessible | Price | WiFi    | TV | Radio | Refreshments | Safe | Views |
-      | 120    | Single | true       | 110   | √       | √  | √     | √            | √    | √     |
-      | 125    | Suite  | false      | 115   | [blank] | √  | √     | √            | √    | √     |
+      | 150    | Single | true       | 110   | √       | √  | √     | √            | √    | √     |
+      | 151    | Suite  | false      | 115   | [blank] | √  | √     | √            | √    | √     |
 
   Scenario Outline: Delete room booking
     When I click the 'x' button for a room booking on the 'B&B Booking management' page
@@ -32,5 +32,5 @@ Feature: Bookings
 
     Examples:
       | Room # |
-      | 110    |
-      | 115    |
+      | 120    |
+      | 125    |
