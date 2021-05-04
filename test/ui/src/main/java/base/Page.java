@@ -2,9 +2,14 @@ package base;
 
 import org.openqa.selenium.support.PageFactory;
 
-public abstract class Page {
+public class Page {
 
-    public Page(){
-        PageFactory.initElements(SharedDriver.getDriver(), this);
+    public <TPage extends Page> TPage GetInstance(Class<TPage> pageClass) {
+        try {
+            return PageFactory.initElements(SharedDriver.getDriver(), pageClass);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw e;
+        }
     }
 }

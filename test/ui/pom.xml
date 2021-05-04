@@ -9,10 +9,10 @@
     <version>0.0.1</version><packaging>jar</packaging>
 
     <properties>
-        <browser>firefox</browser>
+        <browser>chrome</browser>
         <baseUrl>http://localhost:8080</baseUrl>
         <cucumberVersion>5.7.0</cucumberVersion>
-        <headlessFlag>false</headlessFlag>
+        <headlessFlag>true</headlessFlag>
         <implicitWaitTimeout>5</implicitWaitTimeout>
         <pageLoadTimeout>5</pageLoadTimeout>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
