@@ -5,10 +5,12 @@ Feature: Bookings
   I want to manage room bookings
   So that I can keep all the room bookings updated
 
-  Scenario Outline: Add room booking
+  Background:
     Given I am on the 'B&B Booking management' page as a logged in user
       | Username | Password |
       | admin    | password |
+
+  Scenario Outline: Add room booking
     When I enter the booking details on the 'B&B Booking management' page to add a new booking
       | Room #   | Type   | Accessible   | Price   | WiFi   | TV   | Radio   | Refreshments   | Safe   | Views   |
       | <Room #> | <Type> | <Accessible> | <Price> | <WiFi> | <TV> | <Radio> | <Refreshments> | <Safe> | <Views> |
@@ -17,6 +19,18 @@ Feature: Bookings
       | <Room #> | <Type> | <Accessible> | <Price> | <WiFi> | <TV> | <Radio> | <Refreshments> | <Safe> | <Views> |
 
     Examples:
-      | Room # | Type   | Accessible | Price | WiFi | TV | Radio | Refreshments | Safe | Views |
-      | 130   | Single | true       | 110   | √    | √  | √     | √            | √    | √     |
-      | 131   | Suite | false       | 115   | [blank]    | √  | √     | √            | √    | √     |
+      | Room # | Type   | Accessible | Price | WiFi    | TV | Radio | Refreshments | Safe | Views |
+      | 139   | Single | true       | 110   | √       | √  | √     | √            | √    | √     |
+      | 140   | Suite  | false      | 115   | [blank] | √  | √     | √            | √    | √     |
+
+  Scenario Outline: Delete room booking
+    When I click the 'x' button for a room booking on the 'B&B Booking management' page
+      | Room #   |
+      | <Room #> |
+    Then the room booking is not displayed on the 'B&B Booking management' page
+      | <Room #> |
+
+    Examples:
+      | Room # |
+      | 124    |
+      | 136    |

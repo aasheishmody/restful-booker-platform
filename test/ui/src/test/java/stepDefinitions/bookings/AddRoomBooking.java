@@ -14,13 +14,13 @@ import pages.BBBookingManagementPage;
 import java.util.List;
 import java.util.Map;
 
-public class Bookings {
+public class AddRoomBooking {
 
     private final TestContext testContext;
     private final AdminPanelPage adminPanelPage;
     private final BBBookingManagementPage bbBookingManagementPage;
 
-    public Bookings(TestContext testContext, AdminPanelPage adminPanelPage, BBBookingManagementPage bbBookingManagementPage) {
+    public AddRoomBooking(TestContext testContext, AdminPanelPage adminPanelPage, BBBookingManagementPage bbBookingManagementPage) {
         this.testContext=testContext;
         this.adminPanelPage = adminPanelPage;
         this.bbBookingManagementPage = bbBookingManagementPage;

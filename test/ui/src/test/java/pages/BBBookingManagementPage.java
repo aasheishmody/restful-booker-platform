@@ -109,14 +109,20 @@ public class BBBookingManagementPage extends Page {
     }
 
     public boolean newRoomBookingIsDisplayed(String roomNumber, String roomType, String accessible, String price, String wifi, String tv, String radio, String refreshments, String safe, String views) {
-        String id = "roomNumber" +roomNumber;
-        WebElement roomNumberLocator = DriverFactory.getDriver().findElement(By.id(id));
-        String roomNumberLocatorXpath = "//*[@id='" +id+ "']/following::div/p";
-        WebElement roomTypeLocator = DriverFactory.getDriver().findElement(By.xpath(roomNumberLocatorXpath));
-        String accessibleLocatorXpath = roomNumberLocatorXpath + "/following::div/p";
+
+        String currentRoomId = "roomNumber" +roomNumber;
+        WebElement currentRoomNumber = DriverFactory.getDriver().findElement(By.id(currentRoomId));
+        String currentRoomNumberXpath = "//*[@id='" +currentRoomId+ "']";
+
+        String roomTypeLocatorXpath = currentRoomNumberXpath + "/following::div/p";
+        WebElement roomTypeLocator = DriverFactory.getDriver().findElement(By.xpath(roomTypeLocatorXpath));
+
+        String accessibleLocatorXpath = roomTypeLocatorXpath + "/following::div/p";
         WebElement accessibleLocator = DriverFactory.getDriver().findElement(By.xpath(accessibleLocatorXpath));
+
         String priceLocatorXpath = accessibleLocatorXpath + "/following::div/p";
         WebElement priceLocator = DriverFactory.getDriver().findElement(By.xpath(priceLocatorXpath));
+
         String detailsLocatorXpath = priceLocatorXpath + "/following::div/p";
         WebElement detailsLocator = DriverFactory.getDriver().findElement(By.xpath(detailsLocatorXpath));
 
@@ -158,11 +164,37 @@ public class BBBookingManagementPage extends Page {
 
 
 
-        return roomNumberLocator.getText().equalsIgnoreCase(roomNumber) &&
+        return currentRoomNumber.getText().equalsIgnoreCase(roomNumber) &&
                 roomTypeLocator.getText().equalsIgnoreCase(roomType) &&
                 accessibleLocator.getText().equalsIgnoreCase(accessible) &&
                 priceLocator.getText().equalsIgnoreCase(price) &&
                 wifiDetails && tvDetails && radioDetails && refreshmentsDetails && safeDetails && viewsDetails;
 
+    }
+
+    public void clickXButton(String roomNumber) throws Exception {
+        String currentRoomId = "roomNumber" +roomNumber;
+        try {
+            if (DriverFactory.getDriver().findElement(By.id(currentRoomId)).isDisplayed()) {
+                String currentRoomNumberXpath = "//*[@id='" +currentRoomId+ "']";
+                String currentRoomNumberXButtonXpath = currentRoomNumberXpath + "/following::div/span[contains(@class, 'roomDelete')]";
+                WebElement currentRoomBookingXButton = DriverFactory.getDriver().findElement(By.xpath(currentRoomNumberXButtonXpath));
+                currentRoomBookingXButton.click();
+            }
+        }catch (NoSuchElementException e){
+            throw new Exception("There is no booking with room number "+roomNumber);
+        }
+    }
+
+    public boolean roomBookingIsDisplayed(String roomNo) {
+        DriverFactory.getDriver().navigate().refresh();
+        String currentRoomId = "roomNumber" +roomNo;
+        boolean result;
+        try {
+            result = DriverFactory.getDriver().findElement(By.id(currentRoomId)).isDisplayed();
+        }catch (NoSuchElementException e){
+            result = false;
+        }
+        return result;
     }
 }
