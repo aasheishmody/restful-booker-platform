@@ -1,11 +1,10 @@
 package pages;
 
-import base.DriverFactory;
 import base.Page;
-import org.openqa.selenium.WebDriver;
+import base.SharedDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import utilities.ConfigFileReader;
 
 public class AdminPanelPage extends Page {
 
@@ -16,15 +15,17 @@ public class AdminPanelPage extends Page {
     @FindBy(id = "doLogin")
     private WebElement loginButton;
 
+    private final static String ADMINPANELPAGEURL = ConfigFileReader.getInstance().getBaseUrl() + "/#/admin";
+
     public void navigateToAdminPage() {
-        DriverFactory.getDriver().get("http://localhost:8080/#/admin");
+        SharedDriver.getDriver().get(ADMINPANELPAGEURL);
     }
 
     public boolean iAMOnTheAdminPanelPage() {
         return userNameTextbox.isDisplayed();
     }
 
-    public void login(String userName, String password){
+    public void login(String userName, String password) {
         enterUsername(userName);
         enterPassword(password);
         clickLoginButton();

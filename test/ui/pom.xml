@@ -7,11 +7,110 @@
     <groupId>restful-booker-platform</groupId>
     <artifactId>restful-booker-platform-ui-tests</artifactId>
     <version>0.0.1</version>
+    <packaging>jar</packaging>
+    <name>Restful Booker Platform UI Tests</name>
+    <description>UI Tests for restful-booker-platform</description>
+
+    <properties>
+        <browser>Chrome</browser>
+        <baseUrl>http://localhost:8080</baseUrl>
+        <cucumberVersion>5.7.0</cucumberVersion>
+        <headlessFlag>false</headlessFlag>
+        <implicitWaitTimeout>5</implicitWaitTimeout>
+        <pageLoadTimeout>5</pageLoadTimeout>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <reportTitle>${project.name} Report</reportTitle>
+        <targetDir>target</targetDir>
+    </properties>
+
     <build>
+
+        <directory>${basedir}/${targetDir}</directory>
+
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+
+        <testResources>
+            <testResource>
+                <directory>src/test/resources</directory>
+                <filtering>true</filtering>
+            </testResource>
+        </testResources>
+
         <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>3.0.0-M5</version>
+                <executions>
+                    <execution>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>integration-test</goal>
+                        </goals>
+                        <configuration>
+                            <properties>
+                                <property>
+                                    <name>dataproviderthreadcount</name>
+                                    <value>5</value>
+                                </property>
+                            </properties>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>net.masterthought</groupId>
+                <artifactId>maven-cucumber-reporting</artifactId>
+                <version>5.3.0</version>
+                <executions>
+                    <execution>
+                        <id>execution</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <projectName>${reportTitle}</projectName>
+                            <!-- optional, per documentation set this to "true" to bypass generation
+                                of Cucumber Reports entirely, defaults to false if not specified -->
+                            <skip>false</skip>
+                            <!-- output directory for the generated report -->
+                            <outputDirectory>${project.build.directory}</outputDirectory>
+                            <!-- optional, defaults to outputDirectory if not specified -->
+                            <inputDirectory>${project.build.directory}</inputDirectory>
+                            <jsonFiles>
+                                <!-- supports wildcard or name pattern -->
+                                <param>**/json-files/*.json</param>
+                            </jsonFiles>
+                            <!-- optional, defaults to outputDirectory if not specified -->
+                            <classificationDirectory>${project.build.directory}</classificationDirectory>
+                            <classificationFiles>
+                                <!-- supports wildcard or name pattern -->
+                                <param>sample.properties</param>
+                                <param>other.properties</param>
+                            </classificationFiles>
+                            <classifications>
+                                <Browser>${browser}</Browser>
+                                <Platform>${os.name} ${os.version}</Platform>
+                            </classifications>
+                            <!-- optional, set true to fail build on test failures -->
+                            <checkBuildResult>true</checkBuildResult>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
                 <configuration>
                     <source>8</source>
                     <target>8</target>
@@ -19,10 +118,6 @@
             </plugin>
         </plugins>
     </build>
-
-    <properties>
-        <cucumberVersion>5.7.0</cucumberVersion>
-    </properties>
 
     <dependencies>
         <dependency>
