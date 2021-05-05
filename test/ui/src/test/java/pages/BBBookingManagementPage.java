@@ -1,6 +1,5 @@
 package pages;
 
-import base.DriverFactory;
 import base.Page;
 import base.SharedDriver;
 import org.openqa.selenium.By;
@@ -32,18 +31,20 @@ public class BBBookingManagementPage extends Page {
     private WebElement viewsCheckbox;
     @FindBy(id = "createRoom")
     private WebElement createButton;
-    
+
     public boolean iAmOnTheBBBookingManagementPage() {
-             return createButton.isDisplayed();
+        return createButton.isDisplayed();
     }
 
     public void enterRoomBookingDetails(String roomNumber, String roomType, String accessible, String roomPrice, String wiFi, String tv, String radio, String refreshments, String safe, String views) throws Exception {
-        String id = "roomNumber" +roomNumber;
+
+        //Implemented mechanism so booking with same room number cannot be added again
+        String id = "roomNumber" + roomNumber;
         try {
             if (SharedDriver.getDriver().findElement(By.id(id)).isDisplayed())
                 throw new Exception("Room number is not available");
-        }catch (NoSuchElementException e){
-            System.out.println("Room number " +roomNumber+  " is available");
+        } catch (NoSuchElementException e) {
+            System.out.println("Room number " + roomNumber + " is available");
         }
         enterRoomNumber(roomNumber);
         selectRoomType(roomType);
@@ -111,9 +112,10 @@ public class BBBookingManagementPage extends Page {
 
     public boolean newRoomBookingIsDisplayed(String roomNumber, String roomType, String accessible, String price, String wifi, String tv, String radio, String refreshments, String safe, String views) {
 
-        String currentRoomId = "roomNumber" +roomNumber;
+        //room id is dynamic based on the room number so had to adopt the following approach to access the details of the room booking with a specific room number
+        String currentRoomId = "roomNumber" + roomNumber;
         WebElement currentRoomNumber = SharedDriver.getDriver().findElement(By.id(currentRoomId));
-        String currentRoomNumberXpath = "//*[@id='" +currentRoomId+ "']";
+        String currentRoomNumberXpath = "//*[@id='" + currentRoomId + "']";
 
         String roomTypeLocatorXpath = currentRoomNumberXpath + "/following::div/p";
         WebElement roomTypeLocator = SharedDriver.getDriver().findElement(By.xpath(roomTypeLocatorXpath));
@@ -128,41 +130,40 @@ public class BBBookingManagementPage extends Page {
         WebElement detailsLocator = SharedDriver.getDriver().findElement(By.xpath(detailsLocatorXpath));
 
         boolean wifiDetails = false;
-        if(wifi.equalsIgnoreCase("√"))
-        wifiDetails = detailsLocator.getText().contains("WiFi");
+        if (wifi.equalsIgnoreCase("√"))
+            wifiDetails = detailsLocator.getText().contains("WiFi");
         else
             wifiDetails = !(detailsLocator.getText().contains("WiFi"));
 
         boolean tvDetails = false;
-        if(tv.equalsIgnoreCase("√"))
+        if (tv.equalsIgnoreCase("√"))
             tvDetails = detailsLocator.getText().contains("TV");
         else
             tvDetails = !(detailsLocator.getText().contains("TV"));
 
         boolean radioDetails = false;
-        if(radio.equalsIgnoreCase("√"))
+        if (radio.equalsIgnoreCase("√"))
             radioDetails = detailsLocator.getText().contains("Radio");
         else
             radioDetails = !(detailsLocator.getText().contains("Radio"));
 
         boolean refreshmentsDetails = false;
-        if(refreshments.equalsIgnoreCase("√"))
+        if (refreshments.equalsIgnoreCase("√"))
             refreshmentsDetails = detailsLocator.getText().contains("Refreshments");
         else
             refreshmentsDetails = !(detailsLocator.getText().contains("Refreshments"));
 
         boolean safeDetails = false;
-        if(safe.equalsIgnoreCase("√"))
+        if (safe.equalsIgnoreCase("√"))
             safeDetails = detailsLocator.getText().contains("Safe");
         else
             safeDetails = !(detailsLocator.getText().contains("Safe"));
 
         boolean viewsDetails = false;
-        if(views.equalsIgnoreCase("√"))
+        if (views.equalsIgnoreCase("√"))
             viewsDetails = detailsLocator.getText().contains("Views");
         else
-        viewsDetails = !(detailsLocator.getText().contains("Views"));
-
+            viewsDetails = !(detailsLocator.getText().contains("Views"));
 
 
         return currentRoomNumber.getText().equalsIgnoreCase(roomNumber) &&
@@ -174,26 +175,29 @@ public class BBBookingManagementPage extends Page {
     }
 
     public void clickXButton(String roomNumber) throws Exception {
-        String currentRoomId = "roomNumber" +roomNumber;
+
+        //room id is dynamic based on the room number so had to adopt the following approach to access the 'x' button of the room booking with a specific room number
+        String currentRoomId = "roomNumber" + roomNumber;
         try {
             if (SharedDriver.getDriver().findElement(By.id(currentRoomId)).isDisplayed()) {
-                String currentRoomNumberXpath = "//*[@id='" +currentRoomId+ "']";
+                String currentRoomNumberXpath = "//*[@id='" + currentRoomId + "']";
                 String currentRoomNumberXButtonXpath = currentRoomNumberXpath + "/following::div/span[contains(@class, 'roomDelete')]";
                 WebElement currentRoomBookingXButton = SharedDriver.getDriver().findElement(By.xpath(currentRoomNumberXButtonXpath));
                 currentRoomBookingXButton.click();
             }
-        }catch (NoSuchElementException e){
-            throw new Exception("There is no booking with room number "+roomNumber);
+        } catch (NoSuchElementException e) {
+            throw new Exception("There is no booking with room number " + roomNumber);
         }
     }
 
     public boolean roomBookingIsDisplayed(String roomNo) {
         SharedDriver.getDriver().navigate().refresh();
-        String currentRoomId = "roomNumber" +roomNo;
+        //room id is dynamic based on the room number so had to adopt the following approach to access the room booking with a specific room number
+        String currentRoomId = "roomNumber" + roomNo;
         boolean result;
         try {
             result = SharedDriver.getDriver().findElement(By.id(currentRoomId)).isDisplayed();
-        }catch (NoSuchElementException e){
+        } catch (NoSuchElementException e) {
             result = false;
         }
         return result;

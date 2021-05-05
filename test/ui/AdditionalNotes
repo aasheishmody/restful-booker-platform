@@ -1,0 +1,49 @@
+1.Please clone the repository https://github.com/aasheishmody/restful-booker-platform and navigate to test/ui folder for the implemented tests.
+  The whole framework has been created from scratch as is evident from the git version control
+
+2. For the add entry test to pass, the B&B Booking management page should not have an existing booking with the same room number
+   or the test will fail citing "Room is not available"
+
+2. For the delete entry test to pass, the B&B Booking management page have an existing booking with the room number that needs to be deleted
+   or the test will fail citing "here is no booking with room number"
+
+
+
+Tools and technologies
+1. Cucumber for BDD (bridge the gap between business and engineering teams)
+2. Selenium for UI automation (Most popular and mature tool for UI Test Automation)
+3. Java (Most popular language for Test Automation)
+4. Maven (for the build)
+5. Pico container for Dependency Injection
+
+Features
+1. Lightweight and powerful
+2. Parallel run on multiple instances of a browser (tests divided between several instances of the same browser)
+3. Parallel run on different browsers
+4. Platform Independent
+5. Scalable and Maintainable
+6. Continuous Improvement
+7. Comprehensive consolidated HTML reports with screenshots for every step as test evidence
+8. Fast speed of execution
+9. Standardised framework implementation using best practices and industry standards
+
+Technical Features
+1. Page Object pattern
+2. Headless mode
+3. Easy debugging
+4. Stacktrace with errors on test failures on test report
+5. Run from commandline (Easy integration with CI tools)
+6. Scenario Context (to share state between different steps in a test)
+7. Domain Level Test Distribution
+8. Standardised way to add tests
+
+Further suggestions for improvements
+1. Implement Lambda for step definitions
+2. Add separate logger
+3. Use api calls to prepare test data within the test during runtime
+4. Soft assertions
+5. Put configurable explicit waits
+6. Adjust size of screenshots in Test Report
+7. Decouple main framework from tests so it can be used as a dependency for various teams to write the tests for their respective
+   products. The main framework can be continuously and indepdently improved and the product teams can be informed of the new version
+   for the dependency of the main framework accordingly so they have access to the new features of the test framework.

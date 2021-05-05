@@ -1,18 +1,15 @@
 package stepDefinitions.hooks;
 
-import base.DriverFactory;
 import base.SharedDriver;
-import base.TestContext;
 import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
-import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.TakesScreenshot;
 
 import static org.openqa.selenium.OutputType.BYTES;
 
 
-public class Hooks{
+public class Hooks {
 
     @AfterStep
     public void afterStep(Scenario scenario) {

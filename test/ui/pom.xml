@@ -6,17 +6,20 @@
 
     <groupId>restful-booker-platform</groupId>
     <artifactId>restful-booker-platform-ui-tests</artifactId>
-    <version>0.0.1</version><packaging>jar</packaging>
+    <version>0.0.1</version>
+    <packaging>jar</packaging>
+    <name>Restful Booker Platform UI Tests</name>
+    <description>UI Tests for restful-booker-platform</description>
 
     <properties>
         <browser>Chrome</browser>
         <baseUrl>http://localhost:8080</baseUrl>
         <cucumberVersion>5.7.0</cucumberVersion>
-        <headlessFlag>true</headlessFlag>
+        <headlessFlag>false</headlessFlag>
         <implicitWaitTimeout>5</implicitWaitTimeout>
         <pageLoadTimeout>5</pageLoadTimeout>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <reportTitle>UI Test Report</reportTitle>
+        <reportTitle>${project.name} Report</reportTitle>
         <targetDir>target</targetDir>
     </properties>
 

@@ -18,7 +18,7 @@ public class AddRoomBooking {
     private final TestContext testContext;
 
     public AddRoomBooking(TestContext testContext) {
-        this.testContext=testContext;
+        this.testContext = testContext;
     }
 
     @Given("I am on the 'B&B Booking management' page as a logged in user")
@@ -35,7 +35,7 @@ public class AddRoomBooking {
     public void iEnterTheBookingDetailsOnTheBBBookingManagementPageToAddANewBooking(DataTable bookingDetails) throws Exception {
         List<Map<String, String>> data = bookingDetails.asMaps(String.class, String.class);
         // TODO - Improve with generics
-        testContext.page.GetInstance(BBBookingManagementPage.class).enterRoomBookingDetails(data.get(0).get("Room #"),data.get(0).get("Type"),data.get(0).get("Accessible"),data.get(0).get("Price"),data.get(0).get("WiFi"),data.get(0).get("TV"),data.get(0).get("Radio"),data.get(0).get("Refreshments"),data.get(0).get("Safe"),data.get(0).get("Views"));
+        testContext.page.GetInstance(BBBookingManagementPage.class).enterRoomBookingDetails(data.get(0).get("Room #"), data.get(0).get("Type"), data.get(0).get("Accessible"), data.get(0).get("Price"), data.get(0).get("WiFi"), data.get(0).get("TV"), data.get(0).get("Radio"), data.get(0).get("Refreshments"), data.get(0).get("Safe"), data.get(0).get("Views"));
         // TODO - Improve with pojo and lombok
         testContext.setScenarioContext("Room #", data.get(0).get("Room #"));
         testContext.setScenarioContext("Type", data.get(0).get("Type"));

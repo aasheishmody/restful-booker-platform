@@ -31,9 +31,4 @@ public final class SharedDriver {
         storedDrivers.add(driver);
         drivers.set(driver);
     }
-
-    public static void removeDriver() {
-        storedDrivers.remove(drivers.get());
-        drivers.remove();
-    }
 }

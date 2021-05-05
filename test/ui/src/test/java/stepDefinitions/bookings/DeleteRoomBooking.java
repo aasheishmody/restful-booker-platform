@@ -1,7 +1,5 @@
 package stepDefinitions.bookings;
 
-import base.DriverFactory;
-import base.SharedDriver;
 import base.TestContext;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
@@ -17,7 +15,7 @@ public class DeleteRoomBooking {
     private final TestContext testContext;
 
     public DeleteRoomBooking(TestContext testContext) {
-        this.testContext=testContext;
+        this.testContext = testContext;
     }
 
     @When("I click the 'x' button for a room booking on the 'B&B Booking management' page")

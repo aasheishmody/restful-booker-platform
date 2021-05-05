@@ -10,8 +10,8 @@ public class TestContext {
 
     public TestContext(DriverFactory driverFactory, Page page) {
         scenarioContext = new HashMap<>();
-        this.driverFactory=driverFactory;
-        this.page=page;
+        this.driverFactory = driverFactory;
+        this.page = page;
     }
 
     public void setScenarioContext(String key, Object value) {
