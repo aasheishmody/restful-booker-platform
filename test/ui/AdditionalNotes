@@ -4,7 +4,7 @@
 2. For the add entry test to pass, the B&B Booking management page should not have an existing booking with the same room number
    or the test will fail citing "Room is not available"
 
-2. For the delete entry test to pass, the B&B Booking management page have an existing booking with the room number that needs to be deleted
+3. For the delete entry test to pass, the B&B Booking management page have an existing booking with the room number that needs to be deleted
    or the test will fail citing "here is no booking with room number"
 
 
@@ -39,11 +39,12 @@ Technical Features
 
 Further suggestions for improvements
 1. Implement Lambda for step definitions
-2. Add separate logger
-3. Use api calls to prepare test data within the test during runtime
-4. Soft assertions
-5. Put configurable explicit waits
-6. Adjust size of screenshots in Test Report
-7. Decouple main framework from tests so it can be used as a dependency for various teams to write the tests for their respective
+2. Use pojos and lombok
+3. Add separate logger
+4. Use api calls to prepare test data within the test during runtime
+5. Soft assertions
+6. Put configurable explicit waits
+7. Adjust size of screenshots in Test Report
+8. Decouple main framework from tests so it can be used as a dependency for various teams to write the tests for their respective
    products. The main framework can be continuously and indepdently improved and the product teams can be informed of the new version
    for the dependency of the main framework accordingly so they have access to the new features of the test framework.
